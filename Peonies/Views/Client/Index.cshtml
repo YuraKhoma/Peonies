@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Peonies.Models.Client>
+
+@{
+    ViewBag.Title = "Cleents";
+}
+
+<h2>Clients</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        @*Markup omitted for clarity.*@
+    </dl>
+</div>
+
+<table>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClientId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+    </tr>
+}
+</table>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        
+    </dl>
+</div>
+
+
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Orders)
+            </td>
+        </tr>
+    }
+</table>
