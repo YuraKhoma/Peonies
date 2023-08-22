@@ -2,7 +2,15 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<body ng-app>
+    First Name:
+    <input type="text" ng-model="fname" />
+    <br /> Last Name:
+    <input type="text" ng-model="lname" />
+    <br /> Result: {{fname+' '+lname}}
+</body>
+
+    </html>
+<script src="Scripts/angular.min.js">
+
+</script>  

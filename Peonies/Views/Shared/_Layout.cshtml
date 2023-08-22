@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Peonies.styles.css" asp-append-version="true" />
+
+   
+
+    <script src="lib/angular/angular-route.js"></script>
+    <script type="text/javascript" src="angular.min.js"></script>
 </head>
-<body>
-    <header>
+<body ng-app="phonecatApp">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+    </script>
+    <header ng-controller="MyController">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Peonies</a>
@@ -32,6 +39,8 @@
                     </ul>
                 </div>
             </div>
+
+            
         </nav>
     </header>
     <div class="container">

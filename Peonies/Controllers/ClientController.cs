@@ -16,5 +16,12 @@ namespace Peonies.Controllers
         {
             return View(dbContext.Clients.ToList());
         }
+
+
+        public ActionResult Detail(int id)
+        {
+            var data = dbContext.Clients.Where(x => x.ClientId == id).FirstOrDefault();
+            return View(data);
+        }
     }
 }
