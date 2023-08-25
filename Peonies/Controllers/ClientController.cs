@@ -3,25 +3,29 @@ using Microsoft.AspNetCore.Mvc;
 using Peonies.DataBaseAccess;
 using Peonies.Models;
 using System.Net;
+using System.Text.Json;
 
 namespace Peonies.Controllers
 {
-    public class ClientController : Controller
+    [ApiController]
+    [Route("[controller]/[action]")]
+    public class ClientController : ControllerBase
     {
 
         private MyDbContext dbContext = new MyDbContext();
 
-        // GET: /Movies/
-        public ActionResult Index()
+        // GET: /Clients/
+        public IEnumerable<Client> Index()
         {
-            return View(dbContext.Clients.ToList());
+            var res = dbContext.Clients.ToList();
+            return res;       
         }
 
 
-        public ActionResult Detail(int id)
+        public Client Detail(int id)
         {
             var data = dbContext.Clients.Where(x => x.ClientId == id).FirstOrDefault();
-            return View(data);
+            return data;
         }
     }
 }

@@ -1,0 +1,29 @@
+﻿<div>
+    <div ng-repeat="data in topData">
+        <table class="table table-bordered w-100">
+            <tr ng-click="selectionChange(data.clientId, data.name, data.orders)">
+                <td>
+                    <a href="#">{{data.name}}</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <h1>Details about client:</h1>
+    {{detail}}
+
+    <p></p>
+
+    
+    <div ng-repeat="order in orders">
+        <a1>Order IDs:</a1>
+        <table class="table table-bordered w-100">
+            <tr>
+                <td>
+                    {{order.orderID}}
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
