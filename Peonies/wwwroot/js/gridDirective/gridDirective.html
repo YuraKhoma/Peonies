@@ -8,22 +8,51 @@
             </tr>
         </table>
     </div>
+    <div class="">
+        <span class="btn btn-sm btn-outline-info" ng-click="prevPage()">Prev</span>
+        <span>Page {{currentPage}}</span>
+        <span class="btn btn-sm btn-outline-info" ng-click="nextPage()">Next</span>
+    </div>
 
     <h1>Details about client:</h1>
-    {{detail}}
 
-    <p></p>
-
-    
-    <div ng-repeat="order in orders">
-        <a1>Order IDs:</a1>
+    <div>
         <table class="table table-bordered w-100">
             <tr>
+                <td>Client ID</td>
+                <td>Client Name</td>
+                <td>Orders</td>
+            </tr>
+            <tr>
                 <td>
-                    {{order.orderID}}
+                    {{detail2.clientId}}
+                </td>
+                <td>
+                    {{detail2.name}}
+                </td>
+                <td>
+                    <div ng-repeat="order in detail2.orders">
+                        <table class="table table-bordered w-100">
+                            <tr>
+                                <td>OrderID</td>
+                                <td>OrderDetails</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {{order.orderID}}
+                                </td>
+                                <td>
+                                    {{order.orderDetails}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </td>
             </tr>
         </table>
     </div>
+
+
+    
 
 </div>

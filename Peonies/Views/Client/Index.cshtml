@@ -1,20 +1,14 @@
 ﻿@model IEnumerable<Peonies.Models.Client>
 
+
 @{
     ViewBag.Title = "Cleents";
 }
 
 <h2>Clients</h2>
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        @*Markup omitted for clarity.*@
-    </dl>
-</div>
+
+
 
 <table>
 @foreach (var item in Model)
@@ -49,3 +43,5 @@
         </tr>
     }
 </table>
+
+<br />
