@@ -1,9 +1,14 @@
 ﻿<div>
     <div ng-repeat="data in topData">
         <table class="table table-bordered w-100">
-            <tr ng-click="selectionChange(data.clientId, data.name, data.orders)">
-                <td>
+            <tr >
+                <td ng-click="selectionChange(data.clientId, data.name, data.orders)">
                     <a href="#">{{data.name}}</a>
+                </td>
+                <td ng-click="navigateToEditClient(data.clientId)">
+                    <a href="#">
+                        Edit Client
+                    </a>
                 </td>
             </tr>
         </table>
@@ -51,8 +56,4 @@
             </tr>
         </table>
     </div>
-
-
-    
-
 </div>

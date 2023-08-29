@@ -1,0 +1,21 @@
+﻿<div>
+    <div>
+        <h3>Edit client</h3>
+        <form>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="edit-firstname" class="col-sm-2 control-label">Firstname</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="edit-name" name="name" placeholder="Name" ng-model="Input" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="Close()">Close</button>
+                <button type="submit" class="btn btn-primary" ng-click="Edit()">Edit</button>
+            </div>
+        </form>
+    </div>
+</div>

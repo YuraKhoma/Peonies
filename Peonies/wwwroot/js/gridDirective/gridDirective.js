@@ -9,7 +9,7 @@
                 name: '=',
                 detail: '='
             },
-            controller: ['$scope', '$rootScope', '$http', function MyTabsController($scope, $rootScope, $http) {
+            controller: ['$scope', '$rootScope', '$http', '$location', function MyTabsController($scope, $rootScope, $http) {
                 $scope.currentPage = 1;
                 $scope.nextPage = function () {
                     $scope.currentPage += 1;
@@ -25,11 +25,6 @@
                 }
                
                 $scope.selectionChange = function (id, name, orders) {
-                    //// to do - selection change
-
-                    //$scope.detail = 'Client name: ' + name + ' Client id: ' + id;
-                    //$scope.orders = orders;
-
                     $scope.detail = loadDetails(id);
                     debugger;
                 };
@@ -52,13 +47,6 @@
                         }, function errorCallback(response) {
                             debugger;
                         });
-                        /*
-                        let data = {
-                            'a': 1
-                        }
-                        $rootScope.$broadcast("MyEvent", data);
-                        $rootScope.$emit("MyEvent", data);
-                        */
                     }
                 };
 
@@ -76,6 +64,12 @@
                             debugger;
                         });
                     }
+                };
+
+                $scope.navigateToEditClient = function (id) {
+                    debugger;
+                    $scope.id;
+                    window.open(`https://localhost:44362/Home/GetEditClient?id=` + id);
                 };
 
                 loadMainData();

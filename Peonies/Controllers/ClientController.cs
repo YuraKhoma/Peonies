@@ -1,5 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Peonies.DataBaseAccess;
 using Peonies.Models;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +8,7 @@ namespace Peonies.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]
-    public class ClientController : ControllerBase
+    public class ClientController : Controller
     {
 
         private MyDbContext dbContext = new MyDbContext();
@@ -40,10 +39,22 @@ namespace Peonies.Controllers
             return data;
         }
 
-        public void Add(Client client)
+        [HttpPost]
+        public void Add(string name)
         {
+            Client client = new Client { Name = name };
             dbContext.Clients.Add(client);
+            dbContext.SaveChanges();
+        }
 
+
+        [HttpPut]
+        public void Edit(string name, int clientId)
+        {
+
+            var client = dbContext.Clients.First(a => a.ClientId == 1);
+            client.Name = name;
+            dbContext.SaveChanges();
         }
     }
 }
