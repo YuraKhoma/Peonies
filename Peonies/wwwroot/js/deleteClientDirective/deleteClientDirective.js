@@ -1,4 +1,4 @@
-﻿angular.module('phonecatApp').directive('editClientDirective',
+﻿angular.module('phonecatApp').directive('deleteClientDirective',
     function () {
         return {
             restrict: 'E',
@@ -8,17 +8,12 @@
                 clientId: '='
             },
             controller: ['$scope', '$rootScope', '$http', function MyTabsController($scope, $rootScope, $http) {
-                $scope.Edit = function () {
+                $scope.Delete = function () {
                     debugger;
 
-                    $scope.clientId;
-                    $scope.name = $scope.Input
-
-                    
-
                     $http({
-                        method: 'PUT',
-                        url: `https://localhost:44362/Client/edit?name=${$scope.name}&clientid=${$scope.clientId}`
+                        method: 'POST',
+                        url: `https://localhost:44362/Client/delete?clientid=${$scope.clientId}`
                     }).then(function successCallback(response) {
                         $scope.topData = response.data;
                     }, function errorCallback(response) {
@@ -29,7 +24,7 @@
 
             }],
 
-            templateUrl: '../../js/editClientDirective/editClientDirective.html'
+            templateUrl: '../../js/deleteClientDirective/deleteClientDirective.html'
         };
     }
 );

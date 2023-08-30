@@ -34,5 +34,16 @@ namespace Peonies.Controllers
             ViewBag.ClientId = id;  
             return View();
         }
+
+        public IActionResult GetDeleteClient(string name, int id)
+        {
+            ViewBag.ClientId = id;
+            ViewBag.name = name;
+            return View();
+        }
+        public IActionResult GetAddClient()
+        {
+            return View();
+        }
     }
 }

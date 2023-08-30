@@ -1,13 +1,18 @@
 ﻿<div>
     <div ng-repeat="data in topData">
         <table class="table table-bordered w-100">
-            <tr >
+            <tr>
                 <td ng-click="selectionChange(data.clientId, data.name, data.orders)">
                     <a href="#">{{data.name}}</a>
                 </td>
                 <td ng-click="navigateToEditClient(data.clientId)">
                     <a href="#">
                         Edit Client
+                    </a>
+                </td>
+                <td ng-click="navigateToDeleteClient(data.clientId, data.name)">
+                    <a href="#">
+                        Delete Client
                     </a>
                 </td>
             </tr>
@@ -17,6 +22,18 @@
         <span class="btn btn-sm btn-outline-info" ng-click="prevPage()">Prev</span>
         <span>Page {{currentPage}}</span>
         <span class="btn btn-sm btn-outline-info" ng-click="nextPage()">Next</span>
+    </div>
+    <div>
+        <p></p>
+        <table class="table table-bordered w-100">
+            <tr>
+                <td ng-click="navigateToAddClient()" href="#">
+                    <a href="#">
+                        Add client
+                    </a>
+                </td>
+            </tr>
+        </table>
     </div>
 
     <h1>Details about client:</h1>
@@ -56,4 +73,5 @@
             </tr>
         </table>
     </div>
+
 </div>

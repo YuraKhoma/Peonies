@@ -51,9 +51,16 @@ namespace Peonies.Controllers
         [HttpPut]
         public void Edit(string name, int clientId)
         {
-
-            var client = dbContext.Clients.First(a => a.ClientId == 1);
+            var client = dbContext.Clients.First(a => a.ClientId == clientId);
             client.Name = name;
+            dbContext.SaveChanges();
+        }
+
+        [HttpPost]
+        public void Delete(int clientId)
+        {
+            Client client = dbContext.Clients.Find(clientId);
+            dbContext.Clients.Remove(client);
             dbContext.SaveChanges();
         }
     }

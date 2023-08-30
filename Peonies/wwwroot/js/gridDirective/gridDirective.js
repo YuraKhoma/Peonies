@@ -38,6 +38,7 @@
                 }
 
                 function loadMainData() {
+                    debugger;
                     if ($scope.child != true) {
                         $http({
                             method: 'GET',
@@ -71,6 +72,18 @@
                     $scope.id;
                     window.open(`https://localhost:44362/Home/GetEditClient?id=` + id);
                 };
+
+                $scope.navigateToDeleteClient = function (id, name) {
+                    debugger;
+                    $scope.id;
+                    $scope.name;
+                    window.open(`https://localhost:44362/Home/GetDeleteClient?name=${name}&id=${id}`);
+                };
+
+                $scope.navigateToAddClient = function (id, name) {
+                    window.open(`https://localhost:44362/Home/GetAddClient`);
+                };
+               
 
                 loadMainData();
             }],
