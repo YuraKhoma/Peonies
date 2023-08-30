@@ -9,7 +9,6 @@
             controller:  ['$scope', '$rootScope', '$http', function MyTabsController($scope, $rootScope, $http) {
                 $scope.Add = function () {
 
-
                     $scope.name = $scope.Input
 
                     debugger;
@@ -22,7 +21,10 @@
                     }, function errorCallback(response) {
                         debugger;
                     });
-                    
+
+                    $scope.Input = null
+
+                    alert("Item added. You can close the tab");
                 }
             
             }],

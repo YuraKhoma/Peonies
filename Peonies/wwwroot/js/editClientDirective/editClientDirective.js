@@ -14,8 +14,6 @@
                     $scope.clientId;
                     $scope.name = $scope.Input
 
-                    
-
                     $http({
                         method: 'PUT',
                         url: `https://localhost:44362/Client/edit?name=${$scope.name}&clientid=${$scope.clientId}`
@@ -25,6 +23,9 @@
                         debugger;
                     });
 
+                    $scope.Input = null
+
+                    alert("Item edited. You can close the tab");
                 }
 
             }],
