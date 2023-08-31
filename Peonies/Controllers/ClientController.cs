@@ -63,5 +63,22 @@ namespace Peonies.Controllers
             dbContext.Clients.Remove(client);
             dbContext.SaveChanges();
         }
+
+
+        [HttpGet]
+        public void AddOrder(int id)
+        {
+            Client client = dbContext.Clients.Find(id);
+
+            var ord = new Order()
+            {
+                CreatedOn = DateTime.Now,
+                Number = "test",
+                Client = client
+            };
+
+            dbContext.Orders.Add(ord);
+            dbContext.SaveChanges();
+        }
     }
 }

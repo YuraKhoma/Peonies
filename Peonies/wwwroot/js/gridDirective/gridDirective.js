@@ -80,10 +80,17 @@
                     window.open(`https://localhost:44362/Home/GetDeleteClient?name=${name}&id=${id}`);
                 };
 
-                $scope.navigateToAddClient = function (id, name) {
+                $scope.navigateToAddClient = function () {
                     window.open(`https://localhost:44362/Home/GetAddClient`);
                 };
                
+                $scope.navigateToAddClient = function () {
+                    window.open(`https://localhost:44362/Home/GetAddClient`);
+                };
+                $scope.addOrder = function (id) {
+                    debugger;
+                    window.open(`https://localhost:44362/Client/addorder?id=${id}`);
+                };
 
                 loadMainData();
             }],

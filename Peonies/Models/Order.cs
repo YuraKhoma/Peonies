@@ -8,5 +8,7 @@ namespace Peonies.Models
         public string Number { get; set; }
         public DateTime CreatedOn { get; set; }
         public virtual List<OrderDetails> OrderDetails { get; set; }
+        
+        public virtual Client Client { get; set; }
     }
 }
