@@ -16,7 +16,6 @@ namespace Peonies.Controllers
         // GET: /Clients/
         public IEnumerable<Client> Index(int? page)
         {
-            //page = 1;
             int pageSize = 3;
             int pageNumber = (page ?? 1);
 
@@ -75,6 +74,7 @@ namespace Peonies.Controllers
                 CreatedOn = DateTime.Now,
                 Number = "test",
                 Client = client
+                
             };
 
             dbContext.Orders.Add(ord);
