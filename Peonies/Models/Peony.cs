@@ -9,7 +9,8 @@ namespace Peonies.Models
     {
         public int PeonyId { get; set; }
         public string Name { get; set; }
-        public PeonyType Type { get; set; }
-        public Variety Variety { get; set; }
+        public virtual PeonyType Type { get; set; }
+        public virtual Variety Variety { get; set; }
+        public int Price { get; set; }
     }
 }

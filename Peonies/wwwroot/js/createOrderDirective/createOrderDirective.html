@@ -1,0 +1,36 @@
+﻿<div>
+    <div>
+        <h3>Create Order</h3>
+        <form>
+            <div class="modal-body">
+                <div class="form-group">
+
+                    <h2>Select peony: </h2>
+                    <select class="form-control form-control-sm"
+                            ng-options="x as x.variety.name for x in PeoniesSelect"
+                            ng-model="selectedPeony"
+                            ng-value="variety.name">
+                    </select>
+
+                    <h2>You selected: {{selectedPeony.variety.name}}</h2>
+                    <h2>Price {{selectedPeony.price}}</h2>
+
+                    <label for="add-firstname" class="col-sm-2 control-label">Amount</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="add-amount" placeholder="amount" ng-model="Input" required>
+                    </div>
+
+                    <h2>Full Price {{fullPrice}}</h2>
+                </div>
+            </div>
+
+
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="Close()">Close</button>
+                <button type="submit" class="btn btn-primary" ng-click="Add(selectedPeony, Input)">Add</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -45,5 +45,11 @@ namespace Peonies.Controllers
         {
             return View();
         }
+
+        public IActionResult GetCreateOrder(int id)
+        {
+            ViewBag.ClientId = id;
+            return View();
+        }
     }
 }

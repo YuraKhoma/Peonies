@@ -25,7 +25,6 @@ namespace Peonies.Controllers
                 .Take(pageSize)
                 .ToList();
             return res;
-
         }
 
         // GET: //

@@ -84,13 +84,13 @@
                     window.open(`https://localhost:44362/Home/GetAddClient`);
                 };
                
-                $scope.navigateToAddClient = function () {
-                    window.open(`https://localhost:44362/Home/GetAddClient`);
+                $scope.navigateToAddOrder = function (id) {
+                    window.open(`https://localhost:44362/Home/GetCreateOrder?id=${id}`);
                 };
-                $scope.addOrder = function (id) {
-                    debugger;
-                    window.open(`https://localhost:44362/Client/addorder?id=${id}`);
-                };
+                //$scope.addOrder = function (id) {
+                //    debugger;
+                //    window.open(`https://localhost:44362/Client/addorder?id=${id}`);
+                //};
 
                 loadMainData();
             }],
